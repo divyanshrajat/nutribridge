@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="NutriBridge: AI-Powered Cross-Cultural Nutrition Coach"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>NutriBridge | Israeli-Indian Healthcare Hackathon</title>
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#4ade80">
+    
+    <!-- iOS specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NutriBridge">
+    
+    <!-- Android specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <!-- Loading spinner -->
+    <div id="loading" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s;
+    ">
+      <div class="spinner" style="
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(74, 222, 128, 0.3);
+        border-radius: 50%;
+        border-top-color: #4ade80;
+        animation: spin 1s linear infinite;
+      "></div>
+    </div>
+    
+    <script>
+      // Loading screen removal
+      window.addEventListener('load', () => {
+        const loading = document.getElementById('loading');
+        loading.style.opacity = '0';
+        setTimeout(() => {
+          loading.style.display = 'none';
+        }, 300);
+      });
+      
+      // Spinner animation
+      document.head.insertAdjacentHTML('beforeend', `
+        <style>
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+        </style>
+      `);
+    </script>
+  </body>
+</html>
